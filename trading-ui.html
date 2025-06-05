@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mobile Trading App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+    }
+    header {
+      background-color: #1b1f3b;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    .dashboard {
+      padding: 1rem;
+    }
+    .widget {
+      background: white;
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .button-group {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+    }
+    button {
+      flex: 1;
+      padding: 0.8rem;
+      margin: 0.3rem;
+      background-color: #2c6edf;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    .chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #ff7043;
+      color: white;
+      border: none;
+      padding: 0.8rem 1rem;
+      border-radius: 50%;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>SmartTrade</h1>
+  </header>
+
+  <div class="dashboard">
+
+    <div class="widget">
+      <h3>📊 Watchlist</h3>
+      <p>🔹 TSLA – $700.20</p>
+      <p>🔹 AAPL – $189.15</p>
+      <p>🔹 ETH – $2,450</p>
+    </div>
+
+    <div class="widget">
+      <h3>📈 Live Market</h3>
+      <marquee behavior="scroll" direction="left">
+        BTC ↑ 3.5% &nbsp;&nbsp; | &nbsp;&nbsp; NIFTY ↓ 1.2% &nbsp;&nbsp; | &nbsp;&nbsp; DOW ↑ 0.7%
+      </marquee>
+    </div>
+
+    <div class="button-group">
+      <button>Buy</button>
+      <button>Sell</button>
+    </div>
+
+  </div>
+
+  <button class="chatbot">💬</button>
+
+</body>
+</html>
