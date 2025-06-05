@@ -1,33 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Buy/Sell - Trading App</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <title>SmartTrade - Buy/Sell</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+    .container {
+      max-width: 390px;
+      margin: auto;
+      background: white;
+      padding: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .header {
+      background-color: #1c1f3a;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    h2 {
+      font-size: 1.2rem;
+      margin: 1rem 0 0.5rem;
+    }
+    label {
+      display: block;
+      margin: 0.5rem 0 0.2rem;
+      font-weight: 500;
+    }
+    select, input {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-bottom: 1rem;
+    }
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+    .actions button {
+      flex: 1;
+      padding: 0.75rem;
+      font-size: 1rem;
+      background-color: #2962ff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    .preview {
+      margin-top: 1.5rem;
+      background-color: #f0f8ff;
+      padding: 1rem;
+      border-radius: 8px;
+      display: none;
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+    }
+    .nav a {
+      color: #2962ff;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Buy/Sell Assets</h1>
-    <nav>
-      <a href="dashboard.html">Home</a>
-      <a href="search.html">Search</a>
-    </nav>
-  </header>
-  <main>
-    <form>
-      <label for="asset">Asset</label>
-      <select id="asset">
-        <option>BTC</option>
-        <option>ETH</option>
-        <option>AAPL</option>
-        <option>TSLA</option>
-      </select>
-      <label for="amount">Amount</label>
-      <input type="number" id="amount" />
-      <button>Buy</button>
-      <button>Sell</button>
-    </form>
-  </main>
+
+<div class="container">
+  <div class="header">SmartTrade</div>
+
+  <h2>Buy/Sell Assets</h2>
+
+  <label for="asset">Choose Asset</label>
+  <select id="asset">
+    <option>Bitcoin (BTC)</option>
+    <option>Ethereum (ETH)</option>
+    <option>Apple Inc. (AAPL)</option>
+    <option>Tesla (TSLA)</option>
+  </select>
+
+  <label for="quantity">Enter Quantity</label>
+  <input type="number" id="quantity" placeholder="e.g., 1.5">
+
+  <div class="actions">
+    <button onclick="previewTrade('Buy')">Buy</button>
+    <button onclick="previewTrade('Sell')">Sell</button>
+  </div>
+
+  <div class="preview" id="previewBox">
+    <p><strong>Action:</strong> <span id="actionText"></span></p>
+    <p><strong>Asset:</strong> <span id="assetText"></span></p>
+    <p><strong>Quantity:</strong> <span id="qtyText"></span></p>
+    <button style="margin-top: 1rem; width: 100%; background-color: #2e7d32;" onclick="confirmTrade()">Confirm Trade</button>
+  </div>
+
+  <div class="nav">
+    <a href="#">← Dashboard</a>
+    <a href="#">Search →</a>
+  </div>
+</div>
+
+<script>
+  function previewTrade(action) {
+    const asset = document.getElementById('asset').value;
+    const qty = document.getElementById('quantity').value;
+    if (qty === "") return alert("Please enter quantity.");
+    document.getElementById('actionText').innerText = action;
+    document.getElementById('assetText').innerText = asset;
+    document.getElementById('qtyText').innerText = qty;
+    document.getElementById('previewBox').style.display = 'block';
+  }
+
+  function confirmTrade() {
+    alert("Trade Confirmed! 🎉");
+  }
+</script>
+
 </body>
 </html>
