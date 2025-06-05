@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fund Transfer</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .progress-bar {
+      height: 10px;
+      background-color: #e0e0e0;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+    .progress {
+      width: 33%;
+      height: 100%;
+      background-color: #4CAF50;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      margin-bottom: 15px;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .status {
+      text-align: center;
+      font-size: 14px;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Transfer Funds</h2>
+    <div class="progress-bar">
+      <div class="progress" id="progress"></div>
+    </div>
+    <label for="bank">Choose Bank</label>
+    <select id="bank">
+      <option>ANZ</option>
+      <option>Commonwealth</option>
+      <option>NAB</option>
+      <option>Westpac</option>
+    </select>
+
+    <label for="amount">Amount</label>
+    <input type="number" id="amount" placeholder="Enter amount" />
+
+    <button onclick="sendMoney()">Transfer</button>
+    <div class="status" id="status"></div>
+  </div>
+
+  <script>
+    function sendMoney() {
+      document.getElementById('progress').style.width = '100%';
+      document.getElementById('status').textContent = 'Transfer successful! Funds added to your account.';
+    }
+  </script>
+</body>
+</html>
