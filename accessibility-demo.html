@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Accessibility Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --green: #28a745;
+      --red: #dc3545;
+      --blue: #007bff;
+      --bg-light: #ffffff;
+      --text-light: #000000;
+      --bg-dark: #121212;
+      --text-dark: #f0f0f0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .light-mode {
+      background-color: var(--bg-light);
+      color: var(--text-light);
+    }
+
+    .dark-mode {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    .header {
+      font-size: 24px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .status {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .profit {
+      color: var(--green);
+    }
+
+    .loss {
+      color: var(--red);
+    }
+
+    .btn {
+      background-color: var(--blue);
+      color: white;
+      padding: 10px 20px;
+      margin: 6px 4px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .toggle-mode {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body class="light-mode">
+
+  <div class="header">SmartTrade Overview</div>
+
+  <div class="status profit">Profit: +$450.00</div>
+  <div class="status loss">Loss: -$120.00</div>
+
+  <button class="btn">Buy</button>
+  <button class="btn">Sell</button>
+
+  <div class="toggle-mode">
+    <label for="modeSwitch">Toggle Dark Mode</label>
+    <input type="checkbox" id="modeSwitch" onchange="toggleMode()" />
+  </div>
+
+  <script>
+    function toggleMode() {
+      const body = document.body;
+      body.classList.toggle('dark-mode');
+      body.classList.toggle('light-mode');
+    }
+  </script>
+
+</body>
+</html>
